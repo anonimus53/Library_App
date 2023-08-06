@@ -1,0 +1,116 @@
+body{
+    margin: 0;
+}
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 5em;
+    font-weight:1000;
+    color: rgb(197, 123, 25);
+    position: relative;
+    left: 1em;
+    text-shadow: 
+     -3px 0 black, 0 3px black,
+      3px 0 black, 0 -3px black;   
+}
+
+h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3em;
+    font-weight:1000;
+    color: rgb(192, 171, 76);
+    
+    text-shadow: 
+     -3px 0 black, 0 3px black,
+      3px 0 black, 0 -3px black;  
+}
+
+.header{
+    background-color: antiquewhite;
+    color: rgb(194, 133, 42);
+    border-radius: 25px;
+    border-style: solid;
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.bees{
+  
+    display: flex;
+    justify-content: center;
+    margin-right: 2rem;
+    height: 8rem;
+    width: 20rem;
+    position: relative;
+    top: 4em;
+    right: 10em;
+    
+}
+#add{
+    height: 3rem;
+    width: 5em;
+    border-radius: 25px;
+    border-style: double;
+    border-color: rgb(192, 185, 86);
+    background-color: rgb(201, 115, 76);
+    font-family:  'Helvetica Neue', sans-serif;
+    font-size: 2.5em;
+    font-weight: 600;
+    font-style: italic;
+    
+    color: rgb(86, 14, 202);
+    text-shadow: 
+    -3px 0 black, 0 3px black,
+     3px 0 black, 0 -3px black;
+     box-shadow: 
+    -3px 0 black, 0 3px black,
+     3px 0 black, 0 -3px black;
+     
+}
+.board{
+    height: 35em;
+    width: 115em;
+    background-color: antiquewhite;
+    position: relative;
+    left: 2.2em;
+    border-style: solid;
+    border-color: rgb(218, 158, 47);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.smallheads{
+    
+    display: flex;
+    gap: 30em;
+    justify-content: center;
+    
+    border-radius: 25px;;
+}
+.sect{
+    background-color: rgb(222, 224, 181);
+    border-radius: 25px;
+    border-style:solid;
+    border-color:burlywood;
+    height: 28em;
+}
+.smallbodys{
+    margin: 0.5em;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    gap: 1em;
+    
+    
+    border-radius: 25px;;
+}
+
+.bg{
+    margin-bottom: -3em;
+}
+#books{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x:hidden;
+    overflow-y: scroll;
+}
