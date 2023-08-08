@@ -13,10 +13,11 @@
       <div class="name">  
     <h1>Library App</h1>
        </div>
-
+       
        <div class="bees">
-        <button type="button" id="add">ADD</button>
+        "Once you learn to read, you will be forever free." <br> – Frederick Douglass -
        </div>
+        
     
     </div>
     <div class="main">
@@ -29,7 +30,24 @@
             <div class="smallbodys">
                 <div class="sect" id="books"></div>
                 <div class="sect" id="overview"></div>
-                <div class="sect" id="addition"></div>
+                <div class="sect" id="addition">
+                    <form id="forma">
+                        <label for="booktitle">TITLE:
+                            <input type="text" id="booktitle" required>
+                        </label>
+                        <label for="bookauthor">AUTHOR:
+                            <input type="text" id="bookauthor" required>
+                        </label>
+                        <label for="pagenum">PAGES:
+                            <input type="number" id="pagenum" min="30" max="3000" required>
+                        </label>
+                        <label for="hasread">READ:
+                            <input type="radio" id="hasread" name="ans" value="yes">Yes
+                            <input type="radio" id="hasread" name="ans" value="no" checked>No
+                        </label>
+                        <button type="submit" id="btn">Add Book</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
