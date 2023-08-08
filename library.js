@@ -17,12 +17,18 @@ const bible = new Book('BIBLE', 'Prophets of God', 1200, 'no')
 function addBookToLibrary(book){
       myLibrary.push(book);
 }
+
 //we add bible as the first book to the array myLibrary
 addBookToLibrary(bible);
+
 //here is the board that the books are displayed
 const board = document.getElementById('books');
+
 //here is the overview of the books info
 const overview = document.getElementById('overview');
+
+
+
 //appends book to List Of Books
 function displayBook(){
     const item = document.createElement('p');
@@ -37,6 +43,7 @@ function displayBook(){
     item.setAttribute('data-index', myLibrary.length-1);
     let indexbook = item.getAttribute('data-index');
     console.log(indexbook)
+    //info card
     item.addEventListener('click', function(){
        const infoBook = document.createElement('div');
        infoBook.style.color = 'lightblue';
@@ -48,15 +55,51 @@ function displayBook(){
        authorofbook.textContent = 'Author: ' + myLibrary[indexbook].author;
        const pagesofbook = document.createElement('h3')
        pagesofbook.textContent = 'Number Of Pages: ' + myLibrary[indexbook].pages;
-       const hasreadbook = document.createElement('h3')
+       let hasreadbook = document.createElement('h3')
        hasreadbook.textContent = 'Has read: ' + myLibrary[indexbook].read;
-
+       
        infoBook.appendChild(titleofbook);
        infoBook.appendChild(authorofbook);
        infoBook.appendChild(pagesofbook);
        infoBook.appendChild(hasreadbook);
        
        overview.appendChild(infoBook);
+
+       //read button
+       const readbook = document.createElement('button');
+       readbook.textContent = 'Read / Not Read';
+       readbook.style.backgroundColor = 'lightgrey';
+       readbook.style.position = 'relative';
+       readbook.style.left = '7em';
+       readbook.style.width = '20em';
+       
+       readbook.addEventListener('click', function(){
+       
+        overview.removeChild(infoBook);
+        
+        
+        if(myLibrary[indexbook].read == 'no'){
+           
+            myLibrary[indexbook].read = 'yes';
+            
+        }
+        else if(myLibrary[indexbook].read == 'yes'){
+           
+            myLibrary[indexbook].read = 'no';
+            
+        } 
+        let hasreadbook = document.createElement('h3')
+       hasreadbook.textContent = 'Has read: ' + myLibrary[indexbook].read;
+       infoBook.appendChild(titleofbook);
+       infoBook.appendChild(authorofbook);
+       infoBook.appendChild(pagesofbook);
+       infoBook.appendChild(hasreadbook);
+       overview.appendChild(infoBook);
+       overview.appendChild(deletebook);
+       overview.appendChild(readbook);
+       infoBook.removeChild(infoBook.firstChild);
+       })
+       //delete button
        const deletebook = document.createElement('button');
        deletebook.textContent = 'DELETE';
        deletebook.style.backgroundColor = 'red';
@@ -65,9 +108,12 @@ function displayBook(){
        deletebook.style.width = '20em';
        deletebook.addEventListener('click', function(){
         item.remove();
-        overview.textContent = '';
+        overview.removeChild(infoBook);
+        overview.removeChild(deletebook);
+        overview.removeChild(readbook);
        })
        overview.appendChild(deletebook);
+       overview.appendChild(readbook);
     })
     for(let i =0; i < myLibrary.length; i++){
 
