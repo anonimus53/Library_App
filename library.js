@@ -1,16 +1,19 @@
 //An array to store the books
 let myLibrary = [];
 //A constructor(function) creates book objects.
-function Book(title, author, pages, read){
+class Book {
+  constructor(title, author, pages, read){
     this.title = title
     this.author = author
     this.pages = pages
     this.read = read
-    this.info = function(){
+  }
+    info(){
         return 'The "' + title + '" by ' + author + 
         ', ' + pages + ' pages, has read:' + read + '.';
     }
 }
+
 //first book created
 const bible = new Book('BIBLE', 'Prophets of God', 1200, 'no')
 //simple fuction adds book objects to myLibrary array
@@ -150,8 +153,7 @@ displayBook();
 
 })
  
-//When save is pressed we call the book constructor with the
+//When save is pressed we call the book class with the
 // data passed from the form and we add the book to the list
 //and when a book is pressed from the list we display it's 
 // info on the overview section.
-//we need to find a way to display the info better
