@@ -1,6 +1,6 @@
 //An array to store the books
 let myLibrary = [];
-//A constructor(function) creates book objects.
+//A class that creates book objects.
 class Book {
   constructor(title, author, pages, read){
     this.title = title
